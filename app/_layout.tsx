@@ -2,6 +2,8 @@ import "../global.css";
 import { Stack } from 'expo-router';
 import 'react-native-reanimated';
 import { useFonts } from 'expo-font'
+import { createStaticNavigation, StaticParamList } from '@react-navigation/native';
+
 
 export default function RootLayout() {
 

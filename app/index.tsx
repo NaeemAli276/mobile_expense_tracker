@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import SafeViewContainer from '@/components/ui/SafeViewContainer'
 import { formatDate } from '@/utils/textutils'
 import { Calendar, ChartNoAxesCombined } from 'lucide-react-native'
-
+import WalletCard from '@/components/features/WalletCard'
 
 const index = () => {
 
@@ -72,9 +72,9 @@ const index = () => {
 
                 {/* wallet */}
                 <View
-                    className='flex '
+                    className='flex w-full h-auto'
                 >
-
+                    <WalletCard/>
                 </View>
 
             </View> 

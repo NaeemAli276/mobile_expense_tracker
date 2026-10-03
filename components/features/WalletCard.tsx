@@ -4,7 +4,8 @@ import PressableContainer from '../ui/PressableContainer'
 import { useNavigation } from 'expo-router'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { RootStackParamList } from '@/constants/types'
-import { Wallet } from 'lucide-react-native'
+import { Wallet, ChevronRight } from 'lucide-react-native'
+import { formatMoney } from '@/utils/textutils' 
 
 const WalletCard = () => {
 
@@ -27,7 +28,7 @@ const WalletCard = () => {
                 className='flex w-full h-full justify-between flex-row items-center px-3.5'
             >
 
-                {/* icon, name & date */}
+                {/* icon, name */}
                 <View
                     className='flex flex-row gap-4 w-auto h-full items-center '
                 >
@@ -38,17 +39,32 @@ const WalletCard = () => {
                     >
                         <Wallet
                             color={'#3128e1'}
-                            strokeWidth={1.5}
+                            strokeWidth={1.2}
                         />        
                     </View>
 
                     {/* name */}
                     <Text
-                        className='font-medium text-xl text-indigo-900'
+                        className='font-medium text-indigo-900'
                     >
-                        Wallet
+                        Spending wallet
                     </Text>
 
+                </View>
+
+                {/* wallet_amount */}
+                <View
+                    className='flex flex-row items-center gap-2 w-auto h-auto'
+                >
+                    <Text
+                        className='text-indigo-900'
+                    >
+                        {formatMoney(wallet_amount)}
+                    </Text>
+                    <ChevronRight
+                        size={18}
+                        strokeWidth={1.5}
+                    />
                 </View>
 
             </View>

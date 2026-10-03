@@ -2,8 +2,6 @@ import "../global.css";
 import { Stack } from 'expo-router';
 import 'react-native-reanimated';
 import { useFonts } from 'expo-font'
-import { createStaticNavigation, StaticParamList } from '@react-navigation/native';
-
 
 export default function RootLayout() {
 
@@ -21,11 +19,7 @@ export default function RootLayout() {
   return (
     <Stack>
       <Stack.Screen
-        name="index"
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="categories"
+        name="(tabs)"
         options={{ headerShown: false }}
       />
     </Stack>

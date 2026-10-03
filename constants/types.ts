@@ -4,3 +4,10 @@ export type RootStackParamList = {
     wallet: undefined,
     analytics: undefined
 };
+
+export type expense = {
+    icon: string
+    name: string
+    date: string
+    amount: number
+}

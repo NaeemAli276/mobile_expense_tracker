@@ -4,12 +4,39 @@ import SafeViewContainer from '@/components/ui/SafeViewContainer'
 import { formatDate } from '@/utils/textutils'
 import { Calendar, ChartNoAxesCombined } from 'lucide-react-native'
 import WalletCard from '@/components/features/WalletCard'
+import { expense } from '@/constants/types'
 
 const index = () => {
 
     const current_date = new Date().toISOString()
 
     const [monthly_spent, set_monthly_spent] = useState<number>(278.21)
+    const [expenses, set_expenses] = useState<expense[]>([
+        {
+            icon: 'Music',
+            name: 'Spotify',
+            date: current_date,
+            amount: 20.25
+        },
+        {
+            icon: 'Wallet',
+            name: 'Halifax Balance Top up',
+            date: current_date,
+            amount: 7.50
+        },
+        {
+            icon: 'Phone',
+            name: 'Voxi',
+            date: current_date,
+            amount: 10.00
+        },
+        {
+            icon: 'Movie',
+            name: 'Netflix',
+            date: current_date,
+            amount: 17.50
+        },
+    ])
 
     return (
         <SafeViewContainer>
@@ -75,6 +102,11 @@ const index = () => {
                     className='flex w-full h-auto'
                 >
                     <WalletCard/>
+                </View>
+
+                {/* expenses */}
+                <View>
+                    
                 </View>
 
             </View> 

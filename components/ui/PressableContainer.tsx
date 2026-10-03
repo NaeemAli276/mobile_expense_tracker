@@ -12,7 +12,8 @@ const PressableContainer: React.FC<PressableContainerProps> = ({
 }) => {
     return (
         <Pressable
-            className='w-full h-[4.5rem] bg-white rounded-md shadow shadow-indigo-950'
+            className='w-full h-[4.5rem] bg-white rounded-xl shadow shadow-indigo-950/40'
+            onPress={onPress}
         >
             {children}
         </Pressable>

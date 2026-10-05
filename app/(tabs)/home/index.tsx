@@ -1,10 +1,11 @@
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity, FlatList } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import SafeViewContainer from '@/components/ui/SafeViewContainer'
 import { formatDate } from '@/utils/textutils'
 import { Calendar, ChartNoAxesCombined } from 'lucide-react-native'
 import WalletCard from '@/components/features/WalletCard'
 import { expense } from '@/constants/types'
+import ExpenseCard from '@/components/features/ExpenseCard'
 
 const index = () => {
 
@@ -13,25 +14,29 @@ const index = () => {
     const [monthly_spent, set_monthly_spent] = useState<number>(278.21)
     const [expenses, set_expenses] = useState<expense[]>([
         {
+            id: '0',
             icon: 'Music',
             name: 'Spotify',
             date: current_date,
             amount: 20.25
         },
         {
-            icon: 'Wallet',
+            id: '1',
+            icon: 'Banknote',
             name: 'Halifax Balance Top up',
             date: current_date,
             amount: 7.50
         },
         {
-            icon: 'Phone',
+            id: '2',
+            icon: 'Smartphone',
             name: 'Voxi',
             date: current_date,
             amount: 10.00
         },
         {
-            icon: 'Movie',
+            id: '3',
+            icon: 'Film',
             name: 'Netflix',
             date: current_date,
             amount: 17.50
@@ -42,7 +47,7 @@ const index = () => {
         <SafeViewContainer>
 
             <View
-                className='w-full h-full flex flex-col gap-20 '
+                className='w-full h-full flex flex-col gap-12 '
             >
                 
                 {/* current date */}
@@ -105,8 +110,44 @@ const index = () => {
                 </View>
 
                 {/* expenses */}
-                <View>
+                <View
+                    className='flex flex-col gap-3 w-full h-auto'
+                >
                     
+                    {/* title and see all btn */}
+                    <View
+                        className='flex flex-row items-center justify-between'
+                    >
+                        <Text
+                            className='text-lg font-medium text-indigo-900'
+                        >
+                            Recent transactions
+                        </Text>
+                        <TouchableOpacity>
+                            <Text
+                                className='font-regular text-indigo-900'
+                            >
+                                See all
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
+
+                    {/* list */}
+                    <FlatList
+                        data={expenses}
+                        keyExtractor={(item) => item.id}
+                        renderItem={({ item }) => (
+                            <ExpenseCard
+                                id={item.id}
+                                icon={item.icon}
+                                name={item.name}
+                                date={item.date}
+                                amount={item.amount}
+                            />
+                        )}
+                        contentContainerClassName='flex gap-3'
+                    />
+
                 </View>
 
             </View> 

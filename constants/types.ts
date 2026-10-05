@@ -1,3 +1,6 @@
+import { LucideIcon } from "lucide-react-native";
+import React from "react";
+
 export type RootStackParamList = {
     index: undefined
     categories: undefined,
@@ -6,7 +9,8 @@ export type RootStackParamList = {
 };
 
 export type expense = {
-    icon: string
+    id: string
+    icon: any
     name: string
     date: string
     amount: number

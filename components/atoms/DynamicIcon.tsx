@@ -16,7 +16,9 @@ import {
     Music,
     Banknote,
     Smartphone,
-    ChevronRight
+    ChevronRight,
+    Plus,
+    FaceExpressionless
 } from 'lucide-react-native'
 
 const iconMap = {
@@ -34,7 +36,9 @@ const iconMap = {
     Ticket,
     Banknote,
     Smartphone,
-    ChevronRight
+    ChevronRight,
+    Plus,
+    FaceExpressionless
 } as const;
 
 type IconName = keyof typeof iconMap;

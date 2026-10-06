@@ -59,9 +59,9 @@ const ExpenseCard: React.FC<Expense> = ({
                 <View className='flex flex-row items-center gap-1 ml-2'>
                     <Text
                         numberOfLines={1}
-                        className={`${Number(amount) < 0 ? 'text-rose-500' : 'text-emerald-500'} font-medium text-sm`}
+                        className={`text-rose-500 font-medium text-sm`}
                     >
-                        {formatMoney(Number(amount))}
+                        -{formatMoney(Number(amount))}
                     </Text>
                     <DynamicIcon
                         name={'ChevronRight'}

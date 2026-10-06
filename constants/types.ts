@@ -3,16 +3,16 @@ import React from "react";
 
 export type RootStackParamList = {
     index: undefined
-    categories: undefined,
-    wallet: undefined,
-    analytics: undefined,
+    categories: undefined
+    wallet: undefined
+    analytics: undefined
+    newCategory: undefined
     category: { name: string }
 };
 
 export type Category = {
     id: number,
     name: string,
-    expenses: Expense[]
 }
 
 export type Expense = {
@@ -20,5 +20,5 @@ export type Expense = {
     icon: any
     name: string
     date: string
-    amount: string
+    amount: number
 }

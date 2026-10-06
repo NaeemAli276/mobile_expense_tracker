@@ -18,28 +18,28 @@ const index = () => {
             icon: 'Music',
             name: 'Spotify Subscriptions',
             date: current_date,
-            amount: "-20.25"
+            amount: 20.25
         },
         {
             id: '1',
             icon: 'Banknote',
             name: 'Halifax Balance Top up',
             date: current_date,
-            amount: "7.50"
+            amount: 7.50
         },
         {
             id: '2',
             icon: 'Smartphone',
             name: 'Voxi',
             date: current_date,
-            amount: "-10.00"
+            amount: 10.00
         },
         {
             id: '3',
             icon: 'Film',
             name: 'Netflix',
             date: current_date,
-            amount: "-17.50"
+            amount: 17.50
         },
     ])
 
@@ -103,11 +103,11 @@ const index = () => {
                 </View>
 
                 {/* wallet */}
-                <View
+                {/* <View
                     className='flex w-full h-auto'
                 >
                     <WalletCard/>
-                </View>
+                </View> */}
 
                 {/* expenses */}
                 <View

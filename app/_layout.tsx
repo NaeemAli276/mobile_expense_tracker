@@ -30,6 +30,10 @@ export default function RootLayout() {
         name="wallet"
         options={{ headerShown: false }}
       />
+      <Stack.Screen
+        name="newCategory"
+        options={{ headerShown: false }}
+      />
     </Stack>
   );
 }

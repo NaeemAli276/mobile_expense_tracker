@@ -1,10 +1,10 @@
 import { View, Text, TouchableOpacity, FlatList } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import SafeViewContainer from '@/components/ui/SafeViewContainer'
-import { formatDate } from '@/utils/textutils'
+import { formatCalendarDate } from '@/utils/textutils'
 import { Calendar, ChartNoAxesCombined } from 'lucide-react-native'
 import WalletCard from '@/components/features/WalletCard'
-import { expense } from '@/constants/types'
+import { Expense } from '@/constants/types'
 import ExpenseCard from '@/components/features/ExpenseCard'
 
 const index = () => {
@@ -12,34 +12,34 @@ const index = () => {
     const current_date = new Date().toISOString()
 
     const [monthly_spent, set_monthly_spent] = useState<number>(278.21)
-    const [expenses, set_expenses] = useState<expense[]>([
+    const [expenses, set_expenses] = useState<Expense[]>([
         {
             id: '0',
             icon: 'Music',
-            name: 'Spotify',
+            name: 'Spotify Subscriptions',
             date: current_date,
-            amount: 20.25
+            amount: "-20.25"
         },
         {
             id: '1',
             icon: 'Banknote',
             name: 'Halifax Balance Top up',
             date: current_date,
-            amount: 7.50
+            amount: "7.50"
         },
         {
             id: '2',
             icon: 'Smartphone',
             name: 'Voxi',
             date: current_date,
-            amount: 10.00
+            amount: "-10.00"
         },
         {
             id: '3',
             icon: 'Film',
             name: 'Netflix',
             date: current_date,
-            amount: 17.50
+            amount: "-17.50"
         },
     ])
 
@@ -62,7 +62,7 @@ const index = () => {
                     <Text
                         className='text-lg text-indigo-900 font-medium'
                     >
-                        {formatDate(current_date)}    
+                        {formatCalendarDate(current_date)}    
                     </Text>
                 </View>
 

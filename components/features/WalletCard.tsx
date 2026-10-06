@@ -15,7 +15,7 @@ const WalletCard = () => {
 
     const handleNavigate = (): void => {
 
-        nav.navigate('wallet')
+        nav.push('wallet')
 
     }
 

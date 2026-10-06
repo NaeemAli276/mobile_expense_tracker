@@ -1,46 +1,74 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import { expense } from '@/constants/types'
+import { Expense, RootStackParamList } from '@/constants/types'
 import PressableContainer from '../ui/PressableContainer'
 // import { getLucideIcon } from '@/utils/icons'
 import { Ban } from 'lucide-react-native' 
-import DynamicIcon from '../ui/DynamicIcon'
+import DynamicIcon from '../atoms/DynamicIcon'
+import { formatDate, formatMoney } from '@/utils/textutils'
+import { useNavigation } from 'expo-router'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack' 
+import { router } from 'expo-router' 
 
-const ExpenseCard: React.FC<expense> = ({
+const ExpenseCard: React.FC<Expense> = ({
     icon,
     name,
     date,
     amount
 }) => {
 
-    // const Icon = getLucideIcon(icon)
+    const handleNavigate = (name: string): void => {
+        router.push(`/${name}`)
+    }
 
     return (
         <PressableContainer
-            onPress={() => {}}
+            onPress={() => handleNavigate(name)}
         >
             <View
                 className='w-full h-full flex flex-row items-center justify-between px-3.5'
             >
 
                 {/* icon, name, date */}
-                <View
-                    className='flex flex-row gap-2 w-full h-auto'
-                >
+                <View className='flex flex-row gap-3 flex-1 h-auto'>
 
-                    <View
-                        className='bg-indigo-500 p-2 rounded-md'
-                    >   
+                    <View className='bg-indigo-500 p-2 rounded-md'>
                         <DynamicIcon
                             color={'#ffffff'}
                             strokeWidth={1.2}
                             name={icon}
                         />
-                        
+                    </View>
+
+                    <View className='flex flex-col gap-1 flex-1 h-auto min-w-0'>
+                        <Text
+                            numberOfLines={1}
+                            className='font-medium text-indigo-900 text-base/tight'
+                        >
+                            {name}
+                        </Text>
+                        <Text
+                            className='text-sm/tight text-indigo-900/70 font-regular'
+                        >
+                            {formatDate(date)}
+                        </Text>
                     </View>
 
                 </View>
 
+                <View className='flex flex-row items-center gap-1 ml-2'>
+                    <Text
+                        numberOfLines={1}
+                        className={`${Number(amount) < 0 ? 'text-rose-500' : 'text-emerald-500'} font-medium text-sm`}
+                    >
+                        {formatMoney(Number(amount))}
+                    </Text>
+                    <DynamicIcon
+                        name={'ChevronRight'}
+                        size={20}
+                        strokeWidth={1.2}
+                    />
+                </View>
             </View>
         </PressableContainer>
     )

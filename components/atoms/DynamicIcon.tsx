@@ -15,7 +15,8 @@ import {
     Film,
     Music,
     Banknote,
-    Smartphone
+    Smartphone,
+    ChevronRight
 } from 'lucide-react-native'
 
 const iconMap = {
@@ -32,7 +33,8 @@ const iconMap = {
     WashingMachine,
     Ticket,
     Banknote,
-    Smartphone
+    Smartphone,
+    ChevronRight
 } as const;
 
 type IconName = keyof typeof iconMap;

@@ -22,6 +22,14 @@ export default function RootLayout() {
         name="(tabs)"
         options={{ headerShown: false }}
       />
+      <Stack.Screen
+        name="[name]"
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="wallet"
+        options={{ headerShown: false }}
+      />
     </Stack>
   );
 }

@@ -7,7 +7,7 @@ export function truncateText(str: string, maxLength: number): string {
 
 }
 
-export function formatDate(dateString: string): string {
+export function formatCalendarDate(dateString: string): string {
     
     const dayNames = [
         'Sun',
@@ -27,6 +27,28 @@ export function formatDate(dateString: string): string {
     const year = date.getUTCFullYear();
     
     return `${dayName}, ${day} ${month}`;
+}
+
+export function formatDate(dateString: string): string {
+    
+    const dayNames = [
+        'Sun',
+        'Mon',
+        'Tue',
+        'Wed',
+        'Thu',
+        'Fri',
+        'Sat'
+    ]
+    
+    const date = new Date(dateString);
+    
+    const dayName = dayNames[date.getDay()]
+    const day = String(date.getUTCDate())
+    const month = date.toLocaleString('en-US', { month: 'short', timeZone: 'UTC' });
+    const year = date.getUTCFullYear();
+    
+    return `${day} ${month} ${year}`;
 }
 
 export function formatMoney(value: number): string {

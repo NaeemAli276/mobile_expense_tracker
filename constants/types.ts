@@ -5,13 +5,20 @@ export type RootStackParamList = {
     index: undefined
     categories: undefined,
     wallet: undefined,
-    analytics: undefined
+    analytics: undefined,
+    category: { name: string }
 };
 
-export type expense = {
+export type Category = {
+    id: number,
+    name: string,
+    expenses: Expense[]
+}
+
+export type Expense = {
     id: string
     icon: any
     name: string
     date: string
-    amount: number
+    amount: string
 }

@@ -23,7 +23,7 @@ const TabLayout = () => {
             <Tabs.Screen
                 name="index"
                 options={{
-                href: null,
+                    href: null,
                 }}
             />
             

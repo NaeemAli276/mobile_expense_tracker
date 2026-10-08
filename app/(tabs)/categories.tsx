@@ -40,7 +40,7 @@ const categories = () => {
                 className='w-full flex items-center justify-center h-3/4 gap-4'
               >
                 <View
-                  className='bg-indigo-200 rounded-full p-5'
+                  className='rounded-full p-2'
                 >
                   <DynamicIcon
                     name='FaceExpressionless'
@@ -51,9 +51,9 @@ const categories = () => {
                 </View>
                 <View>
                   <Text
-                    className='text-indigo-900 text-xl font-medium'
+                    className='text-indigo-900 text-xl font-medium text-center'
                   >
-                    No categories currently
+                    No categories 
                   </Text>
                 </View>
               </View>

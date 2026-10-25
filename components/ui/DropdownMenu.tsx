@@ -1,5 +1,5 @@
 import { View, Text, Pressable } from 'react-native'
-import React, { Children, useState } from 'react'
+import React, { Children, useEffect, useState } from 'react'
 import DynamicIcon from '../atoms/DynamicIcon'
 
 
@@ -17,6 +17,11 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
 
     const [is_dropdown_active, set_is_dropdown_active] = useState<boolean>(false)
     
+    // just hides the dropdown after a value is selected
+    useEffect(() => {
+        set_is_dropdown_active(false)
+    }, [selected_value])
+
     return (
         <View
             className='flex w-full h-auto relative'

@@ -14,7 +14,7 @@ const categories = () => {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParamList>>()
   
   const handleNavigate = (): void => {
-    nav.push('newCategory')
+    nav.push('createCategory')
   }
 
   return (

@@ -8,7 +8,7 @@ import { RootStackParamList } from '@/constants/types'
 import CustomTextInput from '@/components/ui/CustomTextInput'
 import DropdownMenu from '@/components/ui/DropdownMenu'
 
-const newCategory = () => {
+const createCategory = () => {
     
     const nav = useNavigation<NativeStackNavigationProp<RootStackParamList>>()
     
@@ -25,6 +25,14 @@ const newCategory = () => {
 
     const handleNavigate = (): void => {
         nav.goBack()
+    }
+
+    const handleCreateCategory = (): void => {
+
+        
+
+        nav.goBack()
+
     }
     
     const icons: any[] = [
@@ -44,6 +52,7 @@ const newCategory = () => {
         "Smartphone",
         "Plus",
     ]
+
 
     return (
         <SafeViewContainer>
@@ -86,7 +95,7 @@ const newCategory = () => {
 
                 {/* input fields */}
                 <View
-                    className='flex flex-col w-full h-full justify-between'
+                    className='flex flex-col w-full h-3/4 justify-between'
                 >
 
                     {/* name field & icon field */}
@@ -129,6 +138,17 @@ const newCategory = () => {
                         </DropdownMenu>
                     </View>
 
+                    <TouchableOpacity
+                        className={`${selected_icon.length <= 0 || name_input.length <= 0 ? 'hidden' : 'flex'} bg-indigo-500 items-center justify-center p-3 rounded-lg`}
+                        onPress={() => handleCreateCategory()}
+                    >
+                        <Text
+                            className='text-xl font-medium text-white'
+                        >
+                            Create
+                        </Text>
+                    </TouchableOpacity>
+
                 </View>
 
             </View>
@@ -137,4 +157,4 @@ const newCategory = () => {
     )
 }
 
-export default newCategory
+export default createCategory

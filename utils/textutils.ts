@@ -60,3 +60,8 @@ export function formatMoney(value: number): string {
         currency: 'GBP',
     }).format(value);
 }
+
+// for random ids
+export function randomString(): string { 
+    return Math.random().toString(36).substring(2, 12)
+}

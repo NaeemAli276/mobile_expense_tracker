@@ -6,7 +6,7 @@ export type RootStackParamList = {
     categories: undefined
     wallet: undefined
     analytics: undefined
-    newCategory: undefined
+    createCategory: undefined
     category: { name: string }
 };
 
@@ -18,7 +18,7 @@ export type Category = {
 export type Expense = {
     id: string
     icon: any
-    name: string
+    category_id: string
     date: string
     amount: number
 }
